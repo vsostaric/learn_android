@@ -3,14 +3,18 @@ package com.example.vladimirsostaric.block01;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
+
+import com.example.vladimirsostaric.block01.buttons.PinkButton;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button blueButton;
 
-    private Button pinkButton;
+    private PinkButton pinkButton;
 
     private Toast pinkToast;
 
@@ -20,12 +24,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         blueButton = (Button) findViewById(R.id.blue_button);
-        pinkButton = (Button) findViewById(R.id.pink_button);
-
         blueButton.setOnClickListener(this);
+
+        pinkButton = new PinkButton(getApplicationContext());
+
+        RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayoutMainScreen);
+        relativeLayout.addView(new PinkButton(getApplicationContext()), pinkButton.getPinkLayoutParams());
+
         pinkButton.setOnClickListener(this);
 
-        pinkToast = Toast.makeText(getApplicationContext(), "to do to do to do ...", Toast.LENGTH_SHORT);
     }
 
     @Override
@@ -42,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(view.equals(blueButton)) {
             view.setVisibility(View.INVISIBLE);
         } else if(view.equals(pinkButton)) {
-            pinkToast.show();
+            ((PinkButton) view).getPinkToast().show();
         }
 
     }

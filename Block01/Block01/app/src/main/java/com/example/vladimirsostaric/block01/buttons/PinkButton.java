@@ -22,6 +22,7 @@ public class PinkButton extends AppCompatButton {
         setTextColor(Color.BLACK);
         setBackgroundColor(Color.parseColor("#FD9BF3"));
         setText("The Pink Panther&apos;s To Do List");
+        setLayoutParams(getPinkLayoutParams());
 
     }
 
@@ -29,7 +30,7 @@ public class PinkButton extends AppCompatButton {
         return Toast.makeText(getContext(), "to do to do to do ...", Toast.LENGTH_SHORT);
     }
 
-    public RelativeLayout.LayoutParams getPinkLayoutParams() {
+    private RelativeLayout.LayoutParams getPinkLayoutParams() {
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT

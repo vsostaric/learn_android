@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         pinkButton = new PinkButton(getApplicationContext());
 
         RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayoutMainScreen);
-        relativeLayout.addView(new PinkButton(getApplicationContext()), pinkButton.getPinkLayoutParams());
+        relativeLayout.addView(pinkButton, pinkButton.getLayoutParams());
 
         pinkButton.setOnClickListener(this);
 

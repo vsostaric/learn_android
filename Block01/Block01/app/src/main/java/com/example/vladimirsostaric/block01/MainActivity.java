@@ -8,13 +8,14 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.example.vladimirsostaric.block01.buttons.PinkButton;
+import com.example.vladimirsostaric.block01.buttons.ButtonFactory;
+import com.example.vladimirsostaric.block01.buttons.ButtonType;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button blueButton;
 
-    private PinkButton pinkButton;
+    private Button pinkButton;
 
     private Toast pinkToast;
 
@@ -24,13 +25,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         blueButton = (Button) findViewById(R.id.blue_button);
+
+        ButtonFactory buttonFactory = new ButtonFactory();
+        pinkButton = buttonFactory.makeButton(ButtonType.PINK, getApplicationContext());
+
+        RelativeLayout relativeLayoutMainScreen = (RelativeLayout) findViewById(R.id.relativeLayoutMainScreen);
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT);
+        layoutParams.addRule(RelativeLayout.BELOW, blueButton.getId());
+
+        relativeLayoutMainScreen.addView(pinkButton, layoutParams);
+
         blueButton.setOnClickListener(this);
-
-        pinkButton = new PinkButton(getApplicationContext());
-
-        RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayoutMainScreen);
-        relativeLayout.addView(pinkButton, pinkButton.getLayoutParams());
-
         pinkButton.setOnClickListener(this);
 
     }
@@ -49,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(view.equals(blueButton)) {
             view.setVisibility(View.INVISIBLE);
         } else if(view.equals(pinkButton)) {
-            ((PinkButton) view).getPinkToast().show();
+            Toast.makeText(getApplicationContext(), "to do to do to do ...", Toast.LENGTH_SHORT).show();
         }
 
     }

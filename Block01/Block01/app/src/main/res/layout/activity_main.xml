@@ -9,7 +9,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="The Invisible Man&apos;s To Do List"
+        android:text="Blue button disappears"
         android:id="@+id/blue_button"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"

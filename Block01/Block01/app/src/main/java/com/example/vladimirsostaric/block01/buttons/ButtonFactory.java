@@ -4,11 +4,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.widget.Button;
 
-/**
- * Created by VladimirSostaric on 29.8.2017..
- */
-
-public class ButtonFactory {
+public final class ButtonFactory {
 
     public Button makeButton(ButtonType type, Context context) {
 

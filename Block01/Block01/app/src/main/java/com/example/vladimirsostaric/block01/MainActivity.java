@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(view.equals(blueButton)) {
             view.setVisibility(View.INVISIBLE);
         } else if(view.equals(pinkButton)) {
-            Toast.makeText(getApplicationContext(), "to do to do to do ...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "pinky toast pinky", Toast.LENGTH_SHORT).show();
         }
 
     }

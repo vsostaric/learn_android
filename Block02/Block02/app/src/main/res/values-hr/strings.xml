@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Block02</string>
+    <string name="animal_list_header">Biraj živinu</string>
+    <string name="cat">Mačka</string>
+    <string name="dog">Pas</string>
+    <string name="horse">Konj</string>
+    <string name="pig">Svinja</string>
+    <string name="pickMessage">Izabrao si:</string>
+</resources>

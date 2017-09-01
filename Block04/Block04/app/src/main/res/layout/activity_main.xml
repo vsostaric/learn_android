@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.vladimirsostaric.block04.MainActivity">
+
+
+    <Button
+        android:id="@+id/play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:onClick="play"
+        android:text="Play"
+        tools:layout_editor_absoluteX="137dp"
+        tools:layout_editor_absoluteY="33dp" />
+
+    <Button
+        android:id="@+id/pause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/play"
+        android:layout_alignStart="@+id/play"
+        android:layout_below="@+id/play"
+        android:layout_marginTop="51dp"
+        android:onClick="pause"
+        android:text="Pause" />
+
+    <Switch
+        android:id="@+id/looping"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pause"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="103dp"
+        android:text="Loop" />
+
+</RelativeLayout>
